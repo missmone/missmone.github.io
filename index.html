@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Professional shipment tracking and support for scheduled freight and logistics updates."
+    />
+    <title>Crate Logistics | Shipment Tracking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <div class="brand" aria-label="Crate Logistics home">
+          <span class="brand-mark">C</span>
+          <div>
+            <span class="brand-name">Crate Logistics</span>
+            <small>Worldwide freight services</small>
+          </div>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#tracking">Tracking</a>
+          <a href="#contact">Support</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Trusted cargo coordination</p>
+            <h1>Shipment updates with clarity and confidence.</h1>
+            <p class="hero-text">
+              Manage your transit details, follow your cargo route, and connect with a
+              shipment agent whenever you need support.
+            </p>
+          </div>
+
+          <div class="tracking-card" id="tracking">
+            <h2>Track Your Shipment</h2>
+            <form id="tracking-form" novalidate>
+              <label for="tracking-code" class="sr-only">Tracking code</label>
+              <div class="input-row">
+                <input
+                  id="tracking-code"
+                  type="text"
+                  name="tracking-code"
+                  placeholder="Enter tracking code"
+                  aria-label="Tracking code"
+                  autocomplete="off"
+                />
+                <button type="submit">Track Shipment</button>
+              </div>
+            </form>
+            <p id="tracking-message" class="tracking-message" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="shipment-details" class="shipment-section hidden" aria-live="polite">
+        <div class="container">
+          <div class="details-header">
+            <div>
+              <p class="eyebrow subtle">Shipment status</p>
+              <h2>Transit Overview</h2>
+            </div>
+            <button type="button" id="advance-status" class="secondary-btn">
+              Advance Status
+            </button>
+          </div>
+
+          <div class="summary-grid">
+            <div class="detail-panel info-panel">
+              <h3>Shipment Details</h3>
+              <dl class="details-list">
+                <div>
+                  <dt>Tracking Number</dt>
+                  <dd id="display-tracking-number">DEMO-CA-GR-20261018-4827</dd>
+                </div>
+                <div>
+                  <dt>Package</dt>
+                  <dd id="display-package">Small cardboard box</dd>
+                </div>
+                <div>
+                  <dt>Origin</dt>
+                  <dd id="display-origin">California, USA</dd>
+                </div>
+                <div>
+                  <dt>Destination</dt>
+                  <dd id="display-destination">Athens, Greece</dd>
+                </div>
+                <div>
+                  <dt>Current Demonstration Location</dt>
+                  <dd id="display-location">California, USA</dd>
+                </div>
+                <div>
+                  <dt>Status</dt>
+                  <dd id="display-status" class="status-pill">Awaiting Simulated Pickup</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="detail-panel map-panel">
+              <h3>Route</h3>
+              <div class="map-wrap" aria-label="Route from California to Athens">
+                <svg
+                  class="route-map"
+                  viewBox="0 0 640 320"
+                  role="img"
+                  aria-labelledby="mapTitle mapDesc"
+                >
+                  <title id="mapTitle">Shipment route from California to Athens</title>
+                  <desc id="mapDesc">
+                    A route line connecting California, USA to Athens, Greece.
+                  </desc>
+                  <defs>
+                    <linearGradient id="routeGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+                      <stop offset="0%" stop-color="#29b6f6" />
+                      <stop offset="100%" stop-color="#1e88e5" />
+                    </linearGradient>
+                  </defs>
+
+                  <rect x="0" y="0" width="640" height="320" rx="24" class="map-bg" />
+                  <g class="map-grid">
+                    <path d="M0 105 H640" />
+                    <path d="M0 210 H640" />
+                    <path d="M120 0 V320" />
+                    <path d="M330 0 V320" />
+                    <path d="M520 0 V320" />
+                  </g>
+
+                  <path
+                    class="route-line"
+                    d="M145 215 C 220 195, 255 190, 355 145 S 470 80, 512 88"
+                  />
+
+                  <g class="marker origin">
+                    <circle cx="145" cy="215" r="9" />
+                    <circle cx="145" cy="215" r="18" class="pulse" />
+                  </g>
+                  <g class="marker destination">
+                    <circle cx="512" cy="88" r="9" />
+                    <circle cx="512" cy="88" r="18" class="pulse" />
+                  </g>
+
+                  <g class="map-label origin-label">
+                    <rect x="18" y="186" width="130" height="42" rx="10" />
+                    <text x="32" y="212">California, USA</text>
+                  </g>
+
+                  <g class="map-label destination-label">
+                    <rect x="420" y="56" width="128" height="42" rx="10" />
+                    <text x="434" y="82">Athens, Greece</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div class="container contact-card">
+          <div>
+            <p class="eyebrow">Shipment Support</p>
+            <h2>Need assistance with your shipment?</h2>
+            <p>
+              Contact your shipment agent by email for help with tracking information and
+              shipment enquiries.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a class="email-link" href="mailto:silverquick892@gmail.com">
+              silverquick892@gmail.com
+            </a>
+            <a class="btn-support" href="mailto:silverquick892@gmail.com" aria-label="Contact support by email">
+              ✉ Contact Support
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
