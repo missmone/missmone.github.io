@@ -1,37 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" role="img" aria-label="Package photo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Package photo">
   <defs>
-    <linearGradient id="tableShade" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#6b3d21"/>
-      <stop offset="100%" stop-color="#2d170b"/>
+    <linearGradient id="bgDesk" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#e4ddd2"/>
+      <stop offset="35%" stop-color="#d7c8b5"/>
+      <stop offset="100%" stop-color="#b89774"/>
     </linearGradient>
-    <linearGradient id="boxGreen" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#0f6e4b"/>
-      <stop offset="100%" stop-color="#0a4b39"/>
+    <linearGradient id="boxShade" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fdfdfd"/>
+      <stop offset="45%" stop-color="#f4f3f0"/>
+      <stop offset="100%" stop-color="#d9d4ce"/>
     </linearGradient>
+    <linearGradient id="kraftShadow" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#f2f1ee"/>
+      <stop offset="100%" stop-color="#d8d2ca"/>
+    </linearGradient>
+    <linearGradient id="redAccent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#d9372a"/>
+      <stop offset="100%" stop-color="#a71513"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <filter id="blurBg" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
   </defs>
 
-  <rect width="900" height="680" fill="url(#tableShade)"/>
-  <rect x="90" y="60" width="720" height="520" rx="18" fill="url(#boxGreen)"/>
-  <rect x="130" y="110" width="640" height="74" rx="14" fill="rgba(255,255,255,0.05)"/>
+  <rect width="1200" height="900" fill="url(#bgDesk)"/>
 
-  <g transform="translate(310 75)">
-    <path d="M85 40 L110 90 L140 40 L170 90 L200 40 L225 76 L185 120 L145 102 L110 122 L79 102 L39 120 L0 76 Z" fill="#d7b76a"/>
-    <rect x="90" y="126" width="72" height="18" fill="#d7b76a"/>
+  <g opacity="0.32" filter="url(#blurBg)">
+    <rect x="0" y="0" width="1200" height="900" fill="#dcd4c8"/>
+    <ellipse cx="990" cy="160" rx="180" ry="120" fill="#b7b0c7"/>
+    <ellipse cx="370" cy="130" rx="210" ry="120" fill="#d7d1ce"/>
   </g>
 
-  <text x="450" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" letter-spacing="6" fill="#d7ba6f">ROLEX</text>
+  <g transform="translate(150 138)" filter="url(#softShadow)">
+    <polygon points="0,0 760,0 800,80 840,90 840,505 780,560 80,560 0,500" fill="url(#boxShade)"/>
+    <polygon points="760,0 840,90 840,505 780,560 780,55" fill="#ded9d4" opacity="0.7"/>
+    <polygon points="0,500 80,560 780,560 700,505 0,505" fill="#d5d0c9"/>
 
-  <g transform="translate(255 245)">
-    <rect x="0" y="0" width="390" height="135" rx="12" fill="#f4efe8"/>
-    <rect x="20" y="22" width="120" height="18" fill="#2f6d5a"/>
-    <rect x="20" y="50" width="105" height="12" fill="#2f6d5a" opacity="0.7"/>
-    <text x="255" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#0d6f4f">FedEx</text>
-    <text x="255" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#000">Express</text>
+    <g>
+      <polygon points="160,90 670,90 700,130 120,130" fill="#edf0ef" opacity="0.7"/>
+      <polygon points="95,146 160,90 120,130 60,188" fill="#f3f1ee" opacity="0.7"/>
+      <polygon points="645,90 700,130 770,195 740,205 680,150" fill="#e4e1dc" opacity="0.85"/>
+    </g>
+
+    <g transform="translate(120 130)">
+      <g transform="translate(0 0)">
+        <rect x="0" y="0" width="600" height="350" fill="#f6f5f2" rx="10"/>
+        <rect x="40" y="30" width="520" height="290" fill="rgba(255,255,255,0.3)" rx="10"/>
+        <g transform="translate(68 38)">
+          <rect x="0" y="0" width="135" height="20" fill="#d5d3cf"/>
+          <rect x="0" y="35" width="145" height="16" fill="#dcd8d3"/>
+          <rect x="0" y="66" width="115" height="18" fill="#d6d3cf"/>
+          <rect x="0" y="100" width="98" height="16" fill="#d1d0cc"/>
+        </g>
+      </g>
+    </g>
+
+    <g transform="translate(60 220) rotate(-15 160 140)">
+      <text x="0" y="180" font-family="Arial, sans-serif" font-weight="700" font-size="118" fill="#c22e2b" letter-spacing="-8">Fed</text>
+      <text x="112" y="180" font-family="Arial, sans-serif" font-weight="700" font-size="118" fill="#2b2b2b" letter-spacing="-8">Ex</text>
+      <rect x="18" y="24" width="240" height="30" fill="none" stroke="#2b2b2b" stroke-width="4" opacity="0.5"/>
+    </g>
+
+    <g transform="translate(550 180) rotate(10 160 50)">
+      <text x="0" y="120" font-family="Arial, sans-serif" font-weight="700" font-size="72" fill="#2f2f2f" opacity="0.9">FEDEX</text>
+    </g>
+
+    <g transform="translate(70 432)">
+      <rect x="0" y="0" width="710" height="72" fill="rgba(255,255,255,0.36)" rx="9"/>
+      <text x="355" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#1d1d1d" letter-spacing="1.5">LABEL</text>
+    </g>
   </g>
 
-  <g transform="translate(146 402)">
-    <rect x="0" y="0" width="608" height="112" rx="8" fill="rgba(255,255,255,0.08)"/>
-    <text x="304" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#f6d98a">CERTIFICATE OF AUTHENTICITY</text>
-    <text x="304" y="73" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#f6d98a">INTERNATIONAL GUARANTEE</text>
+  <g opacity="0.9">
+    <ellipse cx="1018" cy="147" rx="72" ry="120" fill="#dfe7df"/>
+    <ellipse cx="1010" cy="154" rx="52" ry="95" fill="#ebf0ea"/>
+    <path d="M995 221 C1015 190, 1018 150, 1042 116 C1074 150, 1058 194, 1042 222 Z" fill="#3c7a4e"/>
+    <path d="M1030 227 C1038 188, 1080 152, 1100 125 C1116 160, 1105 196, 1079 230 Z" fill="#3c7a4e"/>
   </g>
 </svg>
