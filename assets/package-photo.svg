@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" role="img" aria-label="Package photo">
+  <defs>
+    <linearGradient id="tableShade" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#6b3d21"/>
+      <stop offset="100%" stop-color="#2d170b"/>
+    </linearGradient>
+    <linearGradient id="boxGreen" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f6e4b"/>
+      <stop offset="100%" stop-color="#0a4b39"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="680" fill="url(#tableShade)"/>
+  <rect x="90" y="60" width="720" height="520" rx="18" fill="url(#boxGreen)"/>
+  <rect x="130" y="110" width="640" height="74" rx="14" fill="rgba(255,255,255,0.05)"/>
+
+  <g transform="translate(310 75)">
+    <path d="M85 40 L110 90 L140 40 L170 90 L200 40 L225 76 L185 120 L145 102 L110 122 L79 102 L39 120 L0 76 Z" fill="#d7b76a"/>
+    <rect x="90" y="126" width="72" height="18" fill="#d7b76a"/>
+  </g>
+
+  <text x="450" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" letter-spacing="6" fill="#d7ba6f">ROLEX</text>
+
+  <g transform="translate(255 245)">
+    <rect x="0" y="0" width="390" height="135" rx="12" fill="#f4efe8"/>
+    <rect x="20" y="22" width="120" height="18" fill="#2f6d5a"/>
+    <rect x="20" y="50" width="105" height="12" fill="#2f6d5a" opacity="0.7"/>
+    <text x="255" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#0d6f4f">FedEx</text>
+    <text x="255" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#000">Express</text>
+  </g>
+
+  <g transform="translate(146 402)">
+    <rect x="0" y="0" width="608" height="112" rx="8" fill="rgba(255,255,255,0.08)"/>
+    <text x="304" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#f6d98a">CERTIFICATE OF AUTHENTICITY</text>
+    <text x="304" y="73" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#f6d98a">INTERNATIONAL GUARANTEE</text>
+  </g>
+</svg>
