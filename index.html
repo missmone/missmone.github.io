@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Professional shipment tracking and support for scheduled freight and logistics updates."
+      content="Crate Logistics provides air freight, international shipping, parcel management, and reliable final-mile delivery services."
     />
-    <title>Crate Logistics | Shipment Tracking</title>
+    <title>Crate Logistics | Freight & Shipment Tracking</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,34 +19,233 @@
   <body>
     <header class="topbar">
       <div class="container nav-wrap">
-        <div class="brand" aria-label="Crate Logistics home">
+        <a class="brand" href="#top" aria-label="Crate Logistics home">
           <span class="brand-mark">C</span>
-          <div>
+          <span class="brand-name-wrap">
             <span class="brand-name">Crate Logistics</span>
-            <small>Worldwide freight services</small>
-          </div>
-        </div>
+            <small>Worldwide freight network</small>
+          </span>
+        </a>
         <nav class="main-nav" aria-label="Main navigation">
           <a href="#tracking">Tracking</a>
+          <a href="#services">Services</a>
+          <a href="#network">Network</a>
           <a href="#contact">Support</a>
         </nav>
       </div>
     </header>
 
-    <main>
+    <main id="top">
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Trusted cargo coordination</p>
-            <h1>Shipment updates with clarity and confidence.</h1>
+            <p class="eyebrow">Global cargo solutions</p>
+            <h1>Freight movement with precision from pickup to final delivery.</h1>
             <p class="hero-text">
-              Manage your transit details, follow your cargo route, and connect with a
-              shipment agent whenever you need support.
+              From air freight coordination and international shipping to parcel handling and
+              final-mile delivery, we keep high-priority cargo moving with clear communication
+              and dependable routing.
             </p>
+            <div class="cta-row">
+              <a class="primary-btn" href="#tracking">Track shipment</a>
+              <a class="secondary-link" href="#services">View services</a>
+            </div>
+            <ul class="hero-stats" aria-label="Company highlights">
+              <li>
+                <strong>42</strong>
+                <span>countries served</span>
+              </li>
+              <li>
+                <strong>24/7</strong>
+                <span>operations support</span>
+              </li>
+              <li>
+                <strong>1.2k+</strong>
+                <span>weekly consignments</span>
+              </li>
+            </ul>
           </div>
 
-          <div class="tracking-card" id="tracking">
-            <h2>Track Your Shipment</h2>
+          <div class="hero-visual" aria-label="Shipping and freight illustration">
+            <div class="scene-card">
+              <svg viewBox="0 0 560 420" role="img" aria-labelledby="sceneTitle sceneDesc">
+                <title id="sceneTitle">Cargo transportation and logistics scenes</title>
+                <desc id="sceneDesc">
+                  Cargo aircraft, shipping containers, and a freight truck moving goods across a logistics network.
+                </desc>
+                <defs>
+                  <linearGradient id="skyGlow" x1="0" x2="1">
+                    <stop offset="0%" stop-color="#eef8ff" />
+                    <stop offset="100%" stop-color="#dfeeff" />
+                  </linearGradient>
+                  <linearGradient id="roadGrad" x1="0" x2="1">
+                    <stop offset="0%" stop-color="#d9ecff" />
+                    <stop offset="100%" stop-color="#c8def8" />
+                  </linearGradient>
+                </defs>
+
+                <rect x="0" y="0" width="560" height="420" rx="32" fill="url(#skyGlow)" />
+                <g opacity="0.75">
+                  <circle cx="104" cy="84" r="44" fill="#ffffff" />
+                  <circle cx="478" cy="94" r="32" fill="#edf6ff" />
+                </g>
+
+                <g transform="translate(36 132)">
+                  <g transform="translate(10 0)">
+                    <path d="M10 64 L164 64 L206 92 L212 104 L80 104 L62 92 L18 92 Z" fill="#0d5ea8" />
+                    <path d="M86 38 L152 38 L190 64 L82 64 Z" fill="#2a7ee0" />
+                    <path d="M18 92 L62 92 L62 120 L18 120 Z" fill="#dfe9f6" opacity="0.9" />
+                    <path d="M80 104 L212 104 L212 120 L80 120 Z" fill="#dfe9f6" opacity="0.9" />
+                    <path d="M44 50 L134 50" stroke="#eaf4ff" stroke-width="6" stroke-linecap="round" />
+                    <path d="M90 34 L123 34" stroke="#eaf4ff" stroke-width="5" stroke-linecap="round" />
+                    <circle cx="58" cy="124" r="18" fill="#19390d" />
+                    <circle cx="58" cy="124" r="8" fill="#dfe9f6" />
+                    <circle cx="171" cy="124" r="18" fill="#19390d" />
+                    <circle cx="171" cy="124" r="8" fill="#dfe9f6" />
+                  </g>
+                  <g transform="translate(236 20)">
+                    <rect x="0" y="0" width="138" height="92" rx="12" fill="#f4f8fc" stroke="#d7e6f8" />
+                    <rect x="16" y="18" width="32" height="52" rx="4" fill="#1f6abb" />
+                    <rect x="54" y="18" width="32" height="52" rx="4" fill="#1a4e7a" />
+                    <rect x="92" y="18" width="32" height="52" rx="4" fill="#2a7ee0" />
+                    <path d="M32 10 H112" stroke="#bfcee6" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M36 96 L18 116 H120 L104 96" fill="#dfe9f6"/>
+                  </g>
+                </g>
+
+                <g transform="translate(304 210)">
+                  <path d="M0 60 H228 L246 88 H18 Z" fill="#0d5ea8" />
+                  <path d="M32 18 H174 L214 60 H28 Z" fill="#2f7ee1" />
+                  <rect x="66" y="-4" width="80" height="26" rx="6" fill="#d9eafc" />
+                  <circle cx="58" cy="88" r="20" fill="#18273d" />
+                  <circle cx="58" cy="88" r="9" fill="#dfe9f6" />
+                  <circle cx="180" cy="88" r="20" fill="#18273d" />
+                  <circle cx="180" cy="88" r="9" fill="#dfe9f6" />
+                </g>
+
+                <g transform="translate(54 270)">
+                  <rect x="0" y="0" width="184" height="42" rx="14" fill="#dfe9f6" />
+                  <rect x="22" y="8" width="34" height="26" rx="4" fill="#1f6abb" />
+                  <rect x="62" y="8" width="34" height="26" rx="4" fill="#2a7ee0" />
+                  <rect x="102" y="8" width="38" height="26" rx="4" fill="#1a4e7a" />
+                </g>
+
+                <g transform="translate(186 220)">
+                  <rect x="0" y="16" width="138" height="28" rx="8" fill="#e6f1ff" />
+                  <path d="M12 40 L92 40 L130 8 L60 8 Z" fill="#0d5ea8" />
+                  <path d="M92 40 L142 40 L138 70 L100 70 Z" fill="#2a7ee0" />
+                  <path d="M50 12 H68" stroke="#dfe9f6" stroke-width="8" stroke-linecap="round" />
+                </g>
+
+                <path d="M0 330 C 120 300, 178 298, 252 320 S 430 342, 560 318 L560 420 L0 420 Z" fill="url(#roadGrad)" />
+                <path d="M94 330 L500 330" stroke="#bfcee6" stroke-width="6" stroke-linecap="round" opacity="0.7" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="services-section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow subtle">Cargo services</p>
+            <h2>Freight solutions built for time-sensitive operations.</h2>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card">
+              <div class="service-icon">✈</div>
+              <h3>Air freight</h3>
+              <p>
+                Dedicated priority cargo schedules for urgent loads, high-value shipments, and
+                time-sensitive inventory movements.
+              </p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">🚚</div>
+              <h3>Ground transportation</h3>
+              <p>
+                Regional and long-haul trucking support designed for reliable transfer between
+                terminals, depots, and delivery hubs.
+              </p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">🌍</div>
+              <h3>International shipping</h3>
+              <p>
+                Coordinated cross-border routing with customs-aware planning and consistent lane
+                visibility across major trade corridors.
+              </p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">📦</div>
+              <h3>Parcel handling</h3>
+              <p>
+                Careful handling for packaged consignments, consolidated shipments, and final-mile
+                preparation before dispatch.
+              </p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">🚛</div>
+              <h3>Delivery services</h3>
+              <p>
+                On-time distribution planning for scheduled deliveries, local handoff, and end-to-end
+                customer communication.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="network" class="operations-section">
+        <div class="container operations-grid">
+          <div class="operations-copy">
+            <p class="eyebrow subtle">Network coverage</p>
+            <h2>Operational support that keeps shipments moving reliably.</h2>
+            <ul class="feature-list">
+              <li>Consistent coordination across air, sea, and road lanes.</li>
+              <li>Clear status visibility for routing and handoff points.</li>
+              <li>Responsive support for urgent freight, high-priority deliveries, and repeat shipments.</li>
+            </ul>
+          </div>
+
+          <div class="operations-visual" aria-label="Freight distribution illustration">
+            <div class="warehouse-card">
+              <svg viewBox="0 0 520 280" role="img" aria-labelledby="warehouseTitle warehouseDesc">
+                <title id="warehouseTitle">Warehouse logistics and transport route</title>
+                <desc id="warehouseDesc">
+                  A warehouse and transport route showing shipments moving between freight hubs and delivery trucks.
+                </desc>
+                <rect x="0" y="0" width="520" height="280" rx="24" fill="#eef6ff" />
+                <g transform="translate(30 38)">
+                  <rect x="0" y="80" width="180" height="120" rx="12" fill="#dfeaf7" />
+                  <rect x="18" y="52" width="143" height="36" rx="10" fill="#0e4d84" />
+                  <rect x="26" y="92" width="38" height="36" rx="8" fill="#1d7ad5" />
+                  <rect x="72" y="92" width="38" height="36" rx="8" fill="#2d93f3" />
+                  <rect x="118" y="92" width="38" height="36" rx="8" fill="#2a5d9e" />
+                  <path d="M198 190 H298" stroke="#8eaad6" stroke-width="8" stroke-linecap="round" />
+                  <path d="M234 150 Q 286 82, 332 120" fill="none" stroke="#3d8de7" stroke-width="6" stroke-linecap="round" stroke-dasharray="8 12" />
+                </g>
+                <g transform="translate(278 120)">
+                  <path d="M0 58 H146 L164 92 H18 Z" fill="#0d5ea8" />
+                  <path d="M26 26 H112 L138 58 H30 Z" fill="#2f7ee1" />
+                  <rect x="38" y="0" width="52" height="22" rx="6" fill="#dfeaf7" />
+                  <circle cx="42" cy="98" r="18" fill="#1d2f48" />
+                  <circle cx="42" cy="98" r="7" fill="#edf6ff" />
+                  <circle cx="128" cy="98" r="18" fill="#1d2f48" />
+                  <circle cx="128" cy="98" r="7" fill="#edf6ff" />
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tracking-card-section" id="tracking">
+        <div class="container tracking-shell">
+          <div class="tracking-card hero-card">
+            <p class="eyebrow">Track a shipment</p>
+            <h2>Enter your tracking number</h2>
             <form id="tracking-form" novalidate>
               <label for="tracking-code" class="sr-only">Tracking code</label>
               <div class="input-row">
@@ -54,11 +253,11 @@
                   id="tracking-code"
                   type="text"
                   name="tracking-code"
-                  placeholder="Enter tracking code"
+                  placeholder="Enter tracking number"
                   aria-label="Tracking code"
                   autocomplete="off"
                 />
-                <button type="submit">Track Shipment</button>
+                <button type="submit">Track shipment</button>
               </div>
             </form>
             <p id="tracking-message" class="tracking-message" aria-live="polite"></p>
@@ -71,24 +270,22 @@
           <div class="details-header">
             <div>
               <p class="eyebrow subtle">Shipment status</p>
-              <h2>Transit Overview</h2>
+              <h2>Transit overview</h2>
             </div>
-            <button type="button" id="advance-status" class="secondary-btn">
-              Advance Status
-            </button>
+            <button type="button" id="advance-status" class="secondary-btn">Advance status</button>
           </div>
 
           <div class="summary-grid">
             <div class="detail-panel info-panel">
-              <h3>Shipment Details</h3>
+              <h3>Shipment details</h3>
               <dl class="details-list">
                 <div>
-                  <dt>Tracking Number</dt>
+                  <dt>Tracking number</dt>
                   <dd id="display-tracking-number">DEMO-CA-GR-20261018-4827</dd>
                 </div>
                 <div>
                   <dt>Package</dt>
-                  <dd id="display-package">Small cardboard box</dd>
+                  <dd id="display-package">Priority parcel shipment</dd>
                 </div>
                 <div>
                   <dt>Origin</dt>
@@ -99,41 +296,36 @@
                   <dd id="display-destination">Thessaloniki, Greece</dd>
                 </div>
                 <div>
-                  <dt>Client Name</dt>
-                  <dd>Georgiadis Christos</dd>
-                </div>
-                <div>
-                  <dt>Phone</dt>
-                  <dd>+30 694 8599207</dd>
-                </div>
-                <div>
-                  <dt>Current Demonstration Location</dt>
+                  <dt>Current location</dt>
                   <dd id="display-location">California, USA</dd>
                 </div>
                 <div>
                   <dt>Status</dt>
-                  <dd id="display-status" class="status-pill">Awaiting Simulated Pickup</dd>
+                  <dd id="display-status" class="status-pill">Pickup scheduled</dd>
                 </div>
               </dl>
 
-              <div class="package-photo-wrap" style="margin-top:1rem;">
-                <img
-                  src="assets/package-photo.svg"
-                  alt="Package photo"
-                  style="display:block; width:100%; border-radius:12px; border:1px solid rgba(15, 76, 129, 0.14); background:#fff;"
-                />
+              <div class="route-overview">
+                <div class="summary-card">
+                  <span>Route</span>
+                  <strong id="display-route">California → Thessaloniki</strong>
+                </div>
+                <div class="summary-card">
+                  <span>Last update</span>
+                  <strong id="display-last-update">Collection window confirmed</strong>
+                </div>
+              </div>
+
+              <div class="timeline-panel">
+                <h4>Progress timeline</h4>
+                <ol id="status-timeline" class="status-timeline" aria-label="Shipment progress timeline"></ol>
               </div>
             </div>
 
             <div class="detail-panel map-panel">
-              <h3>Route</h3>
+              <h3>Route map</h3>
               <div class="map-wrap" aria-label="Route from California to Thessaloniki">
-                <svg
-                  class="route-map"
-                  viewBox="0 0 640 320"
-                  role="img"
-                  aria-labelledby="mapTitle mapDesc"
-                >
+                <svg class="route-map" viewBox="0 0 640 320" role="img" aria-labelledby="mapTitle mapDesc">
                   <title id="mapTitle">Shipment route from California to Thessaloniki</title>
                   <desc id="mapDesc">
                     A route line connecting California, USA to Thessaloniki, Greece.
@@ -154,10 +346,7 @@
                     <path d="M520 0 V320" />
                   </g>
 
-                  <path
-                    class="route-line"
-                    d="M145 215 C 220 195, 255 190, 355 145 S 470 80, 512 88"
-                  />
+                  <path class="route-line" d="M145 215 C 220 195, 255 190, 355 145 S 470 80, 512 88" />
 
                   <g class="marker origin">
                     <circle cx="145" cy="215" r="9" />
@@ -169,12 +358,12 @@
                   </g>
 
                   <g class="map-label origin-label">
-                    <rect x="18" y="186" width="130" height="42" rx="10" />
+                    <rect x="18" y="186" width="126" height="42" rx="10" />
                     <text x="32" y="212">California, USA</text>
                   </g>
 
                   <g class="map-label destination-label">
-                    <rect x="420" y="56" width="158" height="42" rx="10" />
+                    <rect x="420" y="56" width="170" height="42" rx="10" />
                     <text x="434" y="82">Thessaloniki, Greece</text>
                   </g>
                 </svg>
@@ -187,19 +376,17 @@
       <section id="contact" class="contact-section">
         <div class="container contact-card">
           <div>
-            <p class="eyebrow">Shipment Support</p>
-            <h2>Need assistance with your shipment?</h2>
+            <p class="eyebrow">Shipment support</p>
+            <h2>Need help with a shipment or routing enquiry?</h2>
             <p>
-              Contact your shipment agent by email for help with tracking information and
-              shipment enquiries.
+              Contact our logistics team for support with tracking updates, dispatch coordination,
+              and delivery assistance across key freight lanes.
             </p>
           </div>
           <div class="contact-actions">
-            <a class="email-link" href="mailto:silverquick892@gmail.com">
-              silverquick892@gmail.com
-            </a>
+            <a class="email-link" href="mailto:silverquick892@gmail.com">silverquick892@gmail.com</a>
             <a class="btn-support" href="mailto:silverquick892@gmail.com" aria-label="Contact support by email">
-              ✉ Contact Support
+              Contact support
             </a>
           </div>
         </div>
