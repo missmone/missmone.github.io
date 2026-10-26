@@ -83,26 +83,32 @@ function showShipment() {
   renderShipment(currentStep);
 }
 
+function hideShipment() {
+  if (shipmentSection) {
+    shipmentSection.classList.add('hidden');
+  }
+}
+
 function handleTrackingSubmit(event) {
   event.preventDefault();
 
   const enteredCode = trackingInput.value.trim();
   const trackingParam = new URLSearchParams(window.location.search).get('tracking');
   const trackingNumberParam = new URLSearchParams(window.location.search).get('tracking-number');
-
   const normalizedEnteredCode = enteredCode || trackingParam || trackingNumberParam || '';
 
-  if (normalizedEnteredCode === validTrackingCode) {
-    trackingMessage.textContent = 'Shipment found. Loading routing details.';
-    trackingMessage.className = 'tracking-message success';
-    currentStep = 0;
-    trackingInput.value = normalizedEnteredCode;
-    showShipment();
-  } else {
-    trackingMessage.textContent = 'Tracking code not recognised. Please check the number and try again.';
+  if (normalizedEnteredCode !== validTrackingCode) {
+    trackingMessage.textContent = 'Incorrect tracking code. Please use DEMO-CA-GR-20261018-4827.';
     trackingMessage.className = 'tracking-message error';
-    shipmentSection.classList.add('hidden');
+    hideShipment();
+    return;
   }
+
+  trackingMessage.textContent = 'Shipment found. Loading routing details.';
+  trackingMessage.className = 'tracking-message success';
+  currentStep = 0;
+  trackingInput.value = validTrackingCode;
+  showShipment();
 }
 
 trackingForm.addEventListener('submit', handleTrackingSubmit);
@@ -121,6 +127,7 @@ function initializeTrackingFromUrl() {
   const trackingParam = params.get('tracking') || params.get('tracking-number');
 
   if (!trackingParam) {
+    hideShipment();
     renderTimeline();
     return;
   }
@@ -132,8 +139,9 @@ function initializeTrackingFromUrl() {
     currentStep = 0;
     showShipment();
   } else {
-    trackingMessage.textContent = 'Tracking code not recognised. Please check the number and try again.';
+    trackingMessage.textContent = 'Incorrect tracking code. Please use DEMO-CA-GR-20261018-4827.';
     trackingMessage.className = 'tracking-message error';
+    hideShipment();
   }
 }
 
