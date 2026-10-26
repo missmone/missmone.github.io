@@ -44,6 +44,13 @@ function hideShipment() {
   if (shipmentSection) {
     shipmentSection.classList.add('hidden');
   }
+  const trackedValueNode = document.getElementById('display-tracking-number');
+  if (trackedValueNode) {
+    trackedValueNode.textContent = '—';
+  }
+  if (trackingMessage) {
+    trackingMessage.textContent = '';
+  }
 }
 
 function renderTimeline() {
@@ -74,7 +81,8 @@ function renderShipment(stepIndex) {
   document.getElementById('display-status').textContent = current.status;
   document.getElementById('display-route').textContent = current.route;
   document.getElementById('display-last-update').textContent = current.update;
-  document.getElementById('display-tracking-number').textContent = (trackingInput && trackingInput.value ? trackingInput.value.trim() : validTrackingCode);
+  const entered = trackingInput && trackingInput.value ? trackingInput.value.trim() : validTrackingCode;
+  document.getElementById('display-tracking-number').textContent = entered;
 
   const isArrival = stepIndex >= shipmentProgress.length - 1;
   statusBadge.style.background = isArrival ? 'var(--success-soft)' : 'var(--warning-soft)';
@@ -141,8 +149,15 @@ function initializeTrackingFromUrl() {
   const params = new URLSearchParams(window.location.search);
   const trackingParam = params.get('tracking') || params.get('tracking-number');
 
-  if (trackingParam && trackingInput) {
+  if (trackingInput) {
     trackingInput.value = '';
+  }
+
+  if (trackingParam) {
+    const label = document.getElementById('display-tracking-number');
+    if (label) {
+      label.textContent = '—';
+    }
   }
 
   hideShipment();
