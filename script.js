@@ -74,6 +74,7 @@ function renderShipment(stepIndex) {
   document.getElementById('display-status').textContent = current.status;
   document.getElementById('display-route').textContent = current.route;
   document.getElementById('display-last-update').textContent = current.update;
+  document.getElementById('display-tracking-number').textContent = (trackingInput && trackingInput.value ? trackingInput.value.trim() : validTrackingCode);
 
   const isArrival = stepIndex >= shipmentProgress.length - 1;
   statusBadge.style.background = isArrival ? 'var(--success-soft)' : 'var(--warning-soft)';
@@ -98,8 +99,15 @@ function handleTrackingSubmit(event) {
   const paramCode = queryString.get('tracking') || queryString.get('tracking-number') || '';
   const normalizedCode = enteredCode || paramCode;
 
+  if (!normalizedCode) {
+    trackingMessage.textContent = 'Please enter a tracking number.';
+    trackingMessage.className = 'tracking-message error';
+    hideShipment();
+    return;
+  }
+
   if (normalizedCode !== validTrackingCode) {
-    trackingMessage.textContent = 'Incorrect tracking code. Please use the valid shipment reference.';
+    trackingMessage.textContent = 'Incorrect tracking code. Please check the number and try again.';
     trackingMessage.className = 'tracking-message error';
     hideShipment();
     return;
@@ -108,7 +116,9 @@ function handleTrackingSubmit(event) {
   trackingMessage.textContent = 'Shipment found. Loading routing details.';
   trackingMessage.className = 'tracking-message success';
   currentStep = 0;
-  trackingInput.value = validTrackingCode;
+  if (trackingInput) {
+    trackingInput.value = validTrackingCode;
+  }
   showShipment();
 }
 
@@ -131,8 +141,8 @@ function initializeTrackingFromUrl() {
   const params = new URLSearchParams(window.location.search);
   const trackingParam = params.get('tracking') || params.get('tracking-number');
 
-  if (trackingParam) {
-    trackingInput.value = trackingParam;
+  if (trackingParam && trackingInput) {
+    trackingInput.value = '';
   }
 
   hideShipment();
