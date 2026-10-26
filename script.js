@@ -2,24 +2,32 @@ const validTrackingCode = 'DEMO-CA-GR-20261018-4827';
 
 const shipmentProgress = [
   {
-    status: 'Awaiting Simulated Pickup',
+    status: 'Pickup scheduled',
     location: 'California, USA',
-    note: 'Shipment is prepared and waiting for collection.'
+    route: 'California → Los Angeles gateway',
+    update: 'Collection window confirmed',
+    note: 'Shipment is prepared for pickup and ready for onward dispatch.'
   },
   {
-    status: 'In Transit to Port',
-    location: 'California, USA',
-    note: 'Cargo is moving through the assigned onward logistics route.'
+    status: 'Origin departure',
+    location: 'Los Angeles, USA',
+    route: 'Los Angeles → Port of Long Beach',
+    update: 'Cargo released to the assigned transport lane',
+    note: 'The shipment has moved from the origin point and is being routed to the next hub.'
   },
   {
-    status: 'Departed Origin',
-    location: 'International Route',
-    note: 'The shipment has departed the origin hub and is in transit.'
+    status: 'International transit',
+    location: 'Atlantic / Mediterranean route',
+    route: 'Long Beach → Port of Piraeus',
+    update: 'Transit continues along the international freight corridor',
+    note: 'Cargo is progressing through the planned international route with live coordination.'
   },
   {
-    status: 'Arrived in Athens',
-    location: 'Athens, Greece',
-    note: 'The shipment has reached the destination area and is awaiting final handoff.'
+    status: 'Arrival at destination gateway',
+    location: 'Thessaloniki, Greece',
+    route: 'Port of Piraeus → Thessaloniki',
+    update: 'Shipment reached the destination gateway for final handling',
+    note: 'The consignment has arrived in the destination region and is awaiting local delivery planning.'
   }
 ];
 
@@ -28,8 +36,33 @@ const trackingInput = document.getElementById('tracking-code');
 const trackingMessage = document.getElementById('tracking-message');
 const shipmentSection = document.getElementById('shipment-details');
 const advanceStatusButton = document.getElementById('advance-status');
+const statusTimeline = document.getElementById('status-timeline');
 
 let currentStep = 0;
+
+function hideShipment() {
+  if (shipmentSection) {
+    shipmentSection.classList.add('hidden');
+  }
+}
+
+function renderTimeline() {
+  if (!statusTimeline) return;
+
+  statusTimeline.innerHTML = shipmentProgress
+    .map((item, index) => {
+      const isActive = index <= currentStep;
+      return `
+        <li class="${isActive ? 'active' : ''}">
+          <div>
+            <strong>${item.status}</strong>
+            <span>${item.update}</span>
+          </div>
+        </li>
+      `;
+    })
+    .join('');
+}
 
 function renderShipment(stepIndex) {
   const current = shipmentProgress[stepIndex];
@@ -39,9 +72,15 @@ function renderShipment(stepIndex) {
 
   document.getElementById('display-location').textContent = current.location;
   document.getElementById('display-status').textContent = current.status;
-  statusBadge.style.background = stepIndex >= 3 ? 'var(--success-soft)' : 'var(--warning-soft)';
-  statusBadge.style.color = stepIndex >= 3 ? '#0d7b4c' : '#915e00';
-  statusBadge.style.borderColor = stepIndex >= 3 ? 'rgba(28, 154, 87, 0.22)' : 'rgba(186, 125, 28, 0.18)';
+  document.getElementById('display-route').textContent = current.route;
+  document.getElementById('display-last-update').textContent = current.update;
+
+  const isArrival = stepIndex >= shipmentProgress.length - 1;
+  statusBadge.style.background = isArrival ? 'var(--success-soft)' : 'var(--warning-soft)';
+  statusBadge.style.color = isArrival ? '#0d7b4c' : '#915e00';
+  statusBadge.style.borderColor = isArrival ? 'rgba(28, 154, 87, 0.22)' : 'rgba(186, 125, 28, 0.18)';
+
+  renderTimeline();
 }
 
 function showShipment() {
@@ -51,17 +90,13 @@ function showShipment() {
   renderShipment(currentStep);
 }
 
-function hideShipment() {
-  if (!shipmentSection) return;
-  shipmentSection.classList.add('hidden');
-}
-
 function handleTrackingSubmit(event) {
   event.preventDefault();
 
-  const enteredCode = (trackingInput.value || '').trim();
-  const queryParamValue = new URLSearchParams(window.location.search).get('tracking') || new URLSearchParams(window.location.search).get('tracking-number') || '';
-  const normalizedCode = enteredCode || queryParamValue;
+  const enteredCode = (trackingInput && trackingInput.value ? trackingInput.value.trim() : '');
+  const queryString = new URLSearchParams(window.location.search);
+  const paramCode = queryString.get('tracking') || queryString.get('tracking-number') || '';
+  const normalizedCode = enteredCode || paramCode;
 
   if (normalizedCode !== validTrackingCode) {
     trackingMessage.textContent = 'Incorrect tracking code. Please use DEMO-CA-GR-20261018-4827.';
@@ -96,19 +131,12 @@ function initializeTrackingFromUrl() {
   const params = new URLSearchParams(window.location.search);
   const trackingParam = params.get('tracking') || params.get('tracking-number');
 
+  if (trackingParam) {
+    trackingInput.value = trackingParam;
+  }
+
   hideShipment();
-
-  if (!trackingParam) {
-    trackingInput.value = '';
-    return;
-  }
-
-  trackingInput.value = trackingParam;
-
-  if (trackingParam !== validTrackingCode) {
-    trackingMessage.textContent = 'Incorrect tracking code. Please use DEMO-CA-GR-20261018-4827.';
-    trackingMessage.className = 'tracking-message error';
-  }
+  renderTimeline();
 }
 
 initializeTrackingFromUrl();
