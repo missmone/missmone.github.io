@@ -99,7 +99,7 @@ function handleTrackingSubmit(event) {
   const normalizedCode = enteredCode || paramCode;
 
   if (normalizedCode !== validTrackingCode) {
-    trackingMessage.textContent = 'Incorrect tracking code. Please use DEMO-CA-GR-20261018-4827.';
+    trackingMessage.textContent = 'Incorrect tracking code. Please use the valid shipment reference.';
     trackingMessage.className = 'tracking-message error';
     hideShipment();
     return;
